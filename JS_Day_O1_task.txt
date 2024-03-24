@@ -1,4 +1,7 @@
-HTTP/1.1 and HTTP/2 are two versions of the Hypertext Transfer Protocol, the communication protocol used for transmitting data over the web. While HTTP/1.1 has been around since 1999, HTTP/2 is a more recent protocol introduced in 2015. Here are the key differences between the two:
+HTTP/1.1 and HTTP/2 are two versions of the Hypertext Transfer Protocol, the communication protocol 
+used for transmitting data over the web. While HTTP/1.1 has been around since 1999, HTTP/2 is a more 
+recent protocol introduced in 2015.
+Here are the key differences between the two:
 
 Performance:
 
@@ -122,7 +125,7 @@ Constructor Functions:
 ES6 Classes: 
   Syntactic sugar over constructor functions, providing a more familiar class-based syntax for defining 
   objects and their behavior.
-s
+
 Conclusion
  Objects are the building blocks of JavaScript, enabling developers to represent complex data structures
  and define behavior in their programs. Understanding how objects are internally represented and accessed 
