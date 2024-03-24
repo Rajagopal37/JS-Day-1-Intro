@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP 1.1 VS HTTP 2.0</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+        table {
+            margin-left: 100px;
+            width: 80%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Difference between HTTP1.1 vs HTTP2</h2>
+        <table>
+
+            <thead>
+                <tr>
+                    <th style="text-align: center;">HTTP 1.1</th>
+                    <th style="text-align: center;">HTTP 2.0</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr>
+                    <td>
+                        <h4>Performance:</h4>
+                        <p>In HTTP/1.1, multiple requests from a client to a server typically require separate connections. This can lead to inefficiencies and increased latency, especially for websites with many resources to load.</p>
+                    </td>
+                    <td>
+                        <h4></h4>
+                        <p>
+                            HTTP/2 addresses this issue through features such as multiplexing, header compression, and server push. Multiplexing allows multiple requests and responses to be sent and received over a single connection simultaneously, reducing latency and improving overall performance.
+                        </p>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <h4>Header Compression:          </h4>
+                        <p>Headers in HTTP/1.1 are sent as plaintext and are not compressed. This can result in redundant data transmission, especially for large headers or repeated headers across multiple requests.</p>
+                    </td>
+                    <td>
+                        <h4></h4>
+                        <p>HTTP/2 uses header compression, which significantly reduces the size of headers sent over the wire. This helps in reducing overhead and improving performance, especially for requests with large or repeated headers.</p>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <h4>Server Push: </h4>
+                        <p>In HTTP/1.1, servers can only respond to client requests. If a client needs additional resources after receiving the initial response, it must send additional requests to the server.</p>
+                    </td>
+                    <td>
+                        <h4></h4>
+                        <p>HTTP/2 introduces server push, a feature that allows servers to push additional resources to the client before the client requests them. This can help in reducing latency and improving performance by preemptively sending resources that the client is likely to request.</p>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <h4>Binary Protocol:</h4>
+                        <p>HTTP/1.1 uses a textual format for its protocol messages, which can be inefficient to parse and process.
+                        </p>
+                    </td>
+                    <td>
+                        <h4></h4>
+                        <p>HTTP/2 uses a binary protocol, which is more efficient to parse and process, leading to better performance and reduced overhead.</p>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <h4>Connection Multiplexing:</h4>
+                        <p>Each resource request typically requires a separate TCP connection, leading to the potential for head-of-line blocking issues.</p>
+                    </td>
+                    <td>
+                        <h4></h4>
+                        <p>HTTP/2 supports multiplexing, allowing multiple requests and responses to be interleaved and sent over a single connection. This improves efficiency and reduces latency by avoiding the overhead of establishing multiple connections.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+</body>
+</html>

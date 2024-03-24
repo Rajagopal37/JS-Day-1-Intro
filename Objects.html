@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Objects and Their Internal Representation in JavaScript</h2>
+    <p>In the realm of JavaScript, objects are ubiquitous. They are fundamental to the language and 
+        play a crucial role in representing data and defining the structure of programs. Despite their prevalence, understanding how objects work internally can sometimes be challenging. In this blog post, we'll delve into the fascinating world of objects in JavaScript, exploring their internal representation and shedding light on some key concepts.</p>
+    <h3>What are Objects in JavaScript?</h3>
+    <p>In JavaScript, objects are collections of key-value pairs where keys are strings (or Symbols) 
+        and values can be any data type, including other objects. They are versatile data structures used to represent complex entities, encapsulate data, and define behavior through methods.</p>
+    <p>
+    Object in javascript <br>
+
+    <div style="padding-left: 20px;">
+    // Example of an object in JavaScript <br>
+    const person = {<br>
+    name: 'Rajagopal',<br>
+    age: 29,<br>
+    address: {<br>
+    city: 'Chennai',<br>
+    country: 'INDIA'<br>
+    },<br>
+    greet: function() {<br>
+    console.log(`Hello, my name is ${this.name}.`);<br>
+    }<br>
+    };<br>
+    </div>
+    <h3>Internal Representation of Objects</h3>
+    <p>Under the hood, JavaScript engines utilize various techniques to represent objects efficiently. While the specifics may vary between different engines, there are some common concepts to understand:
+    </p>
+    <h3>Property Lookup:
+    </h3>
+    When accessing properties of an object, JavaScript engines perform a property lookup. This involves traversing the prototype chain, starting from the object itself and moving up through its prototype chain until the property is found or until the end of the chain (i.e., the prototype is null).
+    <h3>Property Descriptors:</h3>
+    Each property in JavaScript objects is associated with a property descriptor, which defines attributes such as value, writable, enumerable, and configurable. These descriptors determine how the property can be accessed and modified.
+    <h3>Hidden Classes and Inline Caching:</h3>
+    JavaScript engines often use hidden classes (also known as shapes or maps) to optimize property access. When an object is created or modified, the engine assigns it a hidden class based on its structure. This allows for efficient property access by utilizing inline caching techniques.
+    <h3>Object Representation:</h3>
+    Objects in JavaScript can be represented using various internal data structures, including dictionaries, hash tables, or specialized data structures optimized for certain use cases (e.g., arrays, typed arrays).
+    Object Creation Patterns
+    JavaScript provides multiple ways to create objects, each with its own advantages and use cases:
+
+    <h3>Object Literals:</h3>
+    The most common way to create objects, using curly braces {} and defining properties and methods inline.
+    Constructor Functions: Functions that are used as constructors with the new keyword to create objects. These functions typically set up object properties and methods using this.
+    <h3>ES6 Classes: </h3>
+    Syntactic sugar over constructor functions, providing a more familiar class-based syntax for defining objects and their behavior.
+    <h3>Conclusion</h3>
+    <p>Objects are the building blocks of JavaScript, enabling developers to represent complex data structures and define behavior in their programs. Understanding how objects are internally represented and accessed by JavaScript engines is crucial for writing efficient and performant code. By grasping these concepts, developers can leverage the full power of objects in JavaScript and build robust and scalable applications.
+    </p>
+    </p>
+</body>
+</html>

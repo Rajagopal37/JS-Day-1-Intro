@@ -1,0 +1,130 @@
+HTTP/1.1 and HTTP/2 are two versions of the Hypertext Transfer Protocol, the communication protocol used for transmitting data over the web. While HTTP/1.1 has been around since 1999, HTTP/2 is a more recent protocol introduced in 2015. Here are the key differences between the two:
+
+Performance:
+
+HTTP/1.1: In HTTP/1.1, multiple requests from a client to a server 
+  typically require separate connections. This can lead to inefficiencies
+  and increased latency, especially for websites with many resources to load.
+HTTP/2: HTTP/2 addresses this issue through features such as multiplexing, header 
+  compression, and server push. Multiplexing allows multiple requests and responses 
+  to be sent and received over a single connection simultaneously, reducing latency
+   and improving overall performance.
+
+
+Header Compression:
+
+HTTP/1.1: Headers in HTTP/1.1 are sent as plaintext and are not compressed. 
+  This can result in redundant data transmission, especially for large headers
+  or repeated headers across multiple requests.
+HTTP/2: HTTP/2 uses header compression, which significantly reduces the size of
+ headers sent over the wire. This helps in reducing overhead and improving 
+ performance, especially for requests with large or repeated headers.
+
+
+Server Push:
+
+HTTP/1.1: In HTTP/1.1, servers can only respond to client requests. If a client
+  needs additional resources after receiving the initial response, 
+  it must send additional requests to the server.
+HTTP/2: HTTP/2 introduces server push, a feature that allows servers to push 
+  additional resources to the client before the client requests them. This can help 
+  in reducing latency and improving performance by preemptively sending resources 
+  that the client is likely to request.
+
+
+Binary Protocol:
+
+HTTP/1.1: HTTP/1.1 uses a textual format for its protocol messages,
+   which can be inefficient to parse and process.
+HTTP/2: HTTP/2 uses a binary protocol, which is more efficient to parse and process,
+   leading to better performance and reduced overhead.
+
+
+Connection Multiplexing:
+
+HTTP/1.1: Each resource request typically requires a separate TCP connection, 
+  leading to the potential for head-of-line blocking issues.
+HTTP/2: HTTP/2 supports multiplexing, allowing multiple requests and responses
+  to be interleaved and sent over a single connection. This improves efficiency 
+  and reduces latency by avoiding the overhead of establishing multiple connections.
+
+In summary, HTTP/2 offers significant performance improvements over HTTP/1.1 by introducing features 
+such as multiplexing, header compression, server push, and a binary protocol. It aims to address the 
+limitations of HTTP/1.1 and provide a more efficient and optimized protocol for modern web applications.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+Objects and Their Internal Representation in JavaScript
+
+In the realm of JavaScript, objects are ubiquitous. They are fundamental to the language and play a 
+crucial role in representing data and defining the structure of programs. Despite their prevalence, 
+understanding how objects work internally can sometimes be challenging. In this blog post, we'll delve
+ into the fascinating world of objects in JavaScript, exploring their internal representation and 
+ shedding light on some key concepts.
+
+What are Objects in JavaScript?
+In JavaScript, objects are collections of key-value pairs where keys are strings (or Symbols) and values
+ can be any data type, including other objects. They are versatile data structures used to represent 
+ complex entities, encapsulate data, and define behavior through methods.
+
+Copy code
+// Example of an object in JavaScript
+
+        const person = {
+          name: 'Rajagopal',
+          age: 29,
+          address: {
+            city: 'Chennai',
+            country: 'INDIA'
+          },
+          greet: function() {
+            console.log(`Hello, my name is ${this.name}.`);
+          }
+        };
+
+
+Internal Representation of Objects
+  Under the hood, JavaScript engines utilize various techniques to represent objects efficiently. 
+  While the specifics may vary between different engines, there are some common concepts to understand:
+
+Property Lookup:
+  When accessing properties of an object, JavaScript engines perform a property lookup. This involves 
+  traversing the prototype chain, starting from the object itself and moving up through its prototype 
+  chain until the property is found or until the end of the chain (i.e., the prototype is null).
+
+Property Descriptors:
+  Each property in JavaScript objects is associated with a property descriptor, which defines attributes 
+  such as value, writable, enumerable, and configurable. These descriptors determine how the property 
+  can be accessed and modified.
+
+Hidden Classes and Inline Caching:
+  JavaScript engines often use hidden classes (also known as shapes or maps) to optimize property access.
+  When an object is created or modified, the engine assigns it a hidden class based on its structure. 
+  This allows for efficient property access by utilizing inline caching techniques.
+
+Object Representation:
+  Objects in JavaScript can be represented using various internal data structures, including dictionaries,
+  hash tables, or specialized data structures optimized for certain use cases (e.g., arrays, typed arrays).
+
+Object Creation Patterns
+  JavaScript provides multiple ways to create objects, each with its own advantages and use cases:
+
+Object Literals:
+ The most common way to create objects, using curly braces {} and defining properties
+ and methods inline.
+
+Constructor Functions: 
+  Functions that are used as constructors with the new keyword to create objects. 
+  These functions typically set up object properties and methods using this.
+
+ES6 Classes: 
+  Syntactic sugar over constructor functions, providing a more familiar class-based syntax for defining 
+  objects and their behavior.
+s
+Conclusion
+ Objects are the building blocks of JavaScript, enabling developers to represent complex data structures
+ and define behavior in their programs. Understanding how objects are internally represented and accessed 
+ by JavaScript engines is crucial for writing efficient and performant code. By grasping these concepts, 
+ developers can leverage the full power of objects in JavaScript and build robust and scalable applications.
